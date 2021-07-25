@@ -10,6 +10,9 @@
 <body>
  <div align="center">
   <h1>You have login  successfully as a student</h1>
+ <form action="courseDetails.jsp">
+<input type="submit" value="VIEW COURSE DETAILS">
+</form>
  </div>
 </body>
 </html>
