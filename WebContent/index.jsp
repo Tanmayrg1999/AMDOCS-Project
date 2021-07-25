@@ -10,11 +10,17 @@
 <center>
 <h2>WELCOME PLEASE SELECT YOUR CHOICE</h2>
 <br>
-<a href="login">Login As Student</a>
+<form action="adminlogin">
+<input type="submit" value="Login as Admin">
+</form>
 <br><br>
-<a href="adminlogin">Login As Admin</a>
+<form action="login">
+<input type="submit" value="Login as Student">
+</form>
 <br><br>
-<a href="register">Register as Student</a>
+<form action="register">
+<input type="submit" value="Register as Student">
+</form>
 </center>
 </body>
 </html>
