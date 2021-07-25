@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 import com.training.model.Student;
 
-public class AdminDao {
+public class LoginDao {
 
     public boolean validate(Student loginBean) throws ClassNotFoundException {
         boolean status = false;
@@ -22,7 +22,7 @@ public class AdminDao {
             // Step 2:Create a statement using connection object
             //CallableStatement stmt=connection.prepareCall("{?= call getId(?)}");
             PreparedStatement preparedStatement = connection
-            .prepareStatement("select * from admin where username = ? and password = ? ");
+            .prepareStatement("select * from StudentDetails where username = ? and password = ? ");
             preparedStatement.setString(1, loginBean.getusername());
             preparedStatement.setString(2, loginBean.getpassword());
 
