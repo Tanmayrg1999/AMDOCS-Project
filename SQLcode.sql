@@ -8,9 +8,10 @@ username varchar(250) default NULL,
 password varchar(20) default NULL,
 address varchar(45) default NULL,
 contact varchar(45) default NULL,
+course varchar(100) default NULL,
 primary key (id));
-drop sequence userid;
-desc employee;
+
+desc StudentDetails;
 
 -- Insert into StudentDetails
 insert into StudentDetails values(6,'viraj','kohli','vk1234','vk1234','pune','email');
