@@ -10,25 +10,25 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.training.dao.StudentDao;
-import com.training.dao.LoginDao;
+import com.training.dao.AdminDao;
+import com.training.controller.AdminLoginServlet;
 import com.training.model.Student;
 
 
 
-@WebServlet("/login")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/adminlogin")
+public class AdminLoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private LoginDao loginDao;
+    private AdminDao loginDao;
 
     public void init() {
-        loginDao = new LoginDao();
+        loginDao = new AdminDao();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		RequestDispatcher dispatcher=request.getRequestDispatcher("/WEB-INF/views/Login.jsp");
+		RequestDispatcher dispatcher=request.getRequestDispatcher("/WEB-INF/views/AdminLogin.jsp");
 		dispatcher.forward(request,response);
 	}
 
@@ -47,13 +47,14 @@ public class LoginServlet extends HttpServlet {
             if (loginDao.validate(loginBean)) {
                 //HttpSession session = request.getSession();
                 // session.setAttribute("username",username);
-            	RequestDispatcher dispatcher=request.getRequestDispatcher("/WEB-INF/views/LoginSuccess.jsp");
+            	RequestDispatcher dispatcher=request.getRequestDispatcher("/WEB-INF/views/AdminLoginSuccess.jsp");
         		dispatcher.forward(request,response);
         		} else {
                 //HttpSession session = request.getSession();
                 //session.setAttribute("user", username);
-                response.sendRedirect("Login.jsp");
-            }
+                response.sendRedirect("AdminLogin.jsp");
+        		//System.out.println("wrong");
+        		}
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
