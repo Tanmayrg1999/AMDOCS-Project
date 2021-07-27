@@ -9,10 +9,13 @@
 </head>
 <body>
  <div align="center">
-  <h3>You have logined successfully as admin</h3>
 <br><br>
 <form action="AddnewCourse">
 <input type="submit" value="ADD NEW COURSE">
+</form>
+<br>
+<form action="AdminTable.jsp">
+<input type="submit" value=" VIEW STUDENT DETAILS">
 </form>
 </div>
 </body>
