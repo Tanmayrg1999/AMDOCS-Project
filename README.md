@@ -8,4 +8,3 @@
 4. Oracle SQL Developer
 5. Eclipse IDE
 6. HTML
-7. 
