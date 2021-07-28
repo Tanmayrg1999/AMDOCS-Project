@@ -1,15 +1,15 @@
 package com.training.dao;
-import java.sql.CallableStatement;
+import com.training.model.Student;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.CallableStatement;
+import java.sql.Types;
 
-import com.training.model.Student;
 
 public class StudentDao
 {
-
 public int registerEmployee(Student student) throws ClassNotFoundException {
        String INSERT_USERS_SQL = "INSERT INTO StudentDetails" +
            "  (id, firstname, lastname, username, password, address, contact) VALUES " +
@@ -20,20 +20,20 @@ public int registerEmployee(Student student) throws ClassNotFoundException {
        Class.forName("com.mysql.jdbc.Driver");
 
        try  {
-        Class.forName("oracle.jdbc.driver.OracleDriver");
-        Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/orcl","sys as sysdba","system");
-        CallableStatement stmt=connection.prepareCall("{?= call getStudent(?)}");
-            // Step 2:Create a statement using connection object
-            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL);
-           preparedStatement.setInt(1, 5);
+    	   Class.forName("oracle.jdbc.driver.OracleDriver");
+           Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/orcl","sys as sysdba","system");
+    	   CallableStatement callSt = null;
+    	   callSt = connection.prepareCall("begin ? := getId(); end;");
+           callSt.registerOutParameter(1, Types.INTEGER);
+           callSt.execute();
+           PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL);
+           preparedStatement.setInt(1, callSt.getInt(1)+1);
            preparedStatement.setString(2, student.getfirstname());
            preparedStatement.setString(3, student.getlastname());
            preparedStatement.setString(4, student.getusername());
            preparedStatement.setString(5, student.getpassword());
            preparedStatement.setString(6, student.getaddress());
            preparedStatement.setString(7, student.getcontact());
-
-           System.out.println(preparedStatement);
            // Step 3: Execute the query or update query
            result = preparedStatement.executeUpdate();
            

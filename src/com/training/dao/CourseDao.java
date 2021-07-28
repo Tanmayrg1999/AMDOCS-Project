@@ -1,8 +1,10 @@
 package com.training.dao;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Types;
 
 import com.training.model.Course;
 
@@ -21,10 +23,12 @@ public int registerCourse(Course c) throws ClassNotFoundException {
        try  {
         Class.forName("oracle.jdbc.driver.OracleDriver");
         Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/orcl","sys as sysdba","system");
-       // CallableStatement stmt=connection.prepareCall("{?= call getStudent(?)}");
-            // Step 2:Create a statement using connection object
+ 	   CallableStatement callSt = null;
+	   callSt = connection.prepareCall("begin ? := getCid(); end;");
+       callSt.registerOutParameter(1, Types.INTEGER);
+       callSt.execute();
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL);
-           preparedStatement.setInt(1, 115);
+           preparedStatement.setInt(1, callSt.getInt(1)+1);
            preparedStatement.setString(2, c.getC_name());
            preparedStatement.setString(3, c.getC_desp());
            preparedStatement.setString(4, c.getC_fees());
