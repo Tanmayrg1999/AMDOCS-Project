@@ -1,27 +1,24 @@
 package com.training.controller;
-import java.io.IOException;
 
+import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.training.dao.CourseDao;
-import com.training.model.Course;
+import com.training.controller.LoginServlet;
 /**
- * Servlet implementation class StudentServlet
+ * Servlet implementation class CourseAddName
  */
-@WebServlet("/AddnewCourse")
-public class AddnewCourseServlet extends HttpServlet {
+@WebServlet("/CourseAddName")
+public class CourseAddName extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private CourseDao cDao=new CourseDao();
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddnewCourseServlet() {
+    public CourseAddName() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,8 +28,11 @@ public class AddnewCourseServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+        LoginServlet s=new LoginServlet();
+        //s.session.setAttribute("username",s.username);
+        System.out.println(s.username);
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		RequestDispatcher dispatcher=request.getRequestDispatcher("/WEB-INF/views/AddCourse.jsp");
+		RequestDispatcher dispatcher=request.getRequestDispatcher("/WEB-INF/views/CourseEnrollSuccess.jsp");
 		dispatcher.forward(request,response);
 	}
 
@@ -41,24 +41,7 @@ public class AddnewCourseServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		  String c_name = request.getParameter("c_name");
-	        String c_desp = request.getParameter("c_desp");
-	        String c_fees = request.getParameter("c_fees");
+		doGet(request, response);
 
-	        
-	        Course c = new Course();
-
-	        c.setC_name(c_name);
-	        c.setC_fees(c_fees);
-	        c.setC_desp(c_desp);
-	        try {
-	            cDao.registerCourse(c);
-	        } catch (Exception e) {
-	            // TODO Auto-generated catch block
-	            e.printStackTrace();
-	        }
-
-			RequestDispatcher dispatcher=request.getRequestDispatcher("/WEB-INF/views/CourseCreateSuccess.jsp");
-			dispatcher.forward(request,response);	}
-
+	}
 }

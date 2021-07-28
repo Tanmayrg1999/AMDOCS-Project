@@ -65,7 +65,7 @@ public class StudentServlet extends HttpServlet {
 	            e.printStackTrace();
 	        }
 
-			RequestDispatcher dispatcher=request.getRequestDispatcher("/WEB-INF/views/CreateSuccess.jsp");
+			RequestDispatcher dispatcher=request.getRequestDispatcher("/WEB-INF/views/Login.jsp");
 			dispatcher.forward(request,response);	}
 
 }
