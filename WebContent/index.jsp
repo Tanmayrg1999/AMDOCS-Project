@@ -5,17 +5,30 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Welcome User</title>
+<style type="text/css">
+body{
+background-image:url("image/background.jpg");
+background-size: 1300px 520px;
+  background-repeat: no-repeat;
+background-attachment: fixed;
+}
+h3{color:#FFFFFF;}
+</style>
 </head>
 <body>
 <center>
-<h2>WELCOME PLEASE SELECT YOUR CHOICE</h2>
+
+<h3>  
+WELCOME PLEASE SELECT YOUR CHOICE
+</h3>
 <br>
+
 <form action="adminlogin">
-<input type="submit" value="Login as Admin">
+<input type="submit" value="Admin Login">
 </form>
 <br><br>
 <form action="login">
-<input type="submit" value="Login as Student">
+<input type="submit" value="Student Login">
 </form>
 <br><br>
 <form action="register">

@@ -20,12 +20,23 @@ ResultSet resultSet1=null;
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<style>
+body{
+background-image:url("image/background.jpg");
+background-size: 1300px 520px;
+  background-repeat: no-repeat;
+background-attachment: fixed;
+}h3 { color: #FFFFFF; }
+h4 { color: #FFFFFF; }
+tr{color:#FFFFFF;}
+td{color:#FFFFFF;}
+</style>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
-<h2>ENROLLED DONE SUCCESFULLY</h2>
+<h2>SUCCESFULLY ENROLLED</h2>
 <%
 try{ 
 Connection connection1 = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/orcl","sys as sysdba","system");
@@ -46,15 +57,10 @@ resultSet = st.executeQuery(sql);
 
 while(resultSet.next()){
 %>
-<h3>Course id:</h3>
-<h4><%=resultSet.getString("course_id") %></h4>
-<h3>Course Name:</h3>
-<h4><%=resultSet.getString("c_name") %></h4>
-<h3>Course Description:</h3>
-<h4><%=resultSet.getString("c_desp")%></h4>
-<h3>Course Fees:</h3>
-<h4><%=resultSet.getString("c_fees") %></h4>
-
+<h3>Course id: <%=resultSet.getString("course_id") %></h3>
+<h3>Course Name: <%=resultSet.getString("c_name") %></h3>
+<h3>Course Description: <%=resultSet.getString("c_desp")%></h3>
+<h3>Course Fees: <%=resultSet.getString("c_fees") %></h3>
 <% 
 }
 }

@@ -3,7 +3,16 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.*,java.util.*"%>
-
+<style>
+body{
+background-image:url("image/background.jpg");
+background-size: 1300px 520px;
+  background-repeat: no-repeat;
+background-attachment: fixed;
+}h2 { color: #FFFFFF; }
+tr{color:#000000;}
+td{color:#000000;}
+</style>
 <%
 try {
     Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -16,9 +25,8 @@ Statement statement = null;
 ResultSet resultSet = null;
 ResultSet resultSet1=null;
 %>
-<h4>welcome  <%out.println(session.getAttribute("username")); %></h4>
-<h2 align="center"><font><strong>COURSE DETAILS :</strong></font></h2>
-<table align="center" cellpadding="5" cellspacing="5" border="1">
+<h2 ><font><strong>COURSE DETAILS :</strong></font></h2>
+<table cellpadding="5" cellspacing="5" border="1">
 <tr>
 
 </tr>
