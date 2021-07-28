@@ -2,6 +2,16 @@
  pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
+<style>
+body{
+background-image:url("image/background.jpg");
+background-size: 1300px 520px;
+  background-repeat: no-repeat;
+background-attachment: fixed;
+}h1 { color: #FFFFFF; }
+tr{color:#FFFFFF;}
+td{color:#FFFFFF;}
+</style>
 <head>
 <meta charset="ISO-8859-1">
 <title>ADD COURSE FORM</title>
@@ -12,18 +22,19 @@
   <form action="<%= request.getContextPath() %>/AddnewCourse" method="post">
    <table style="with: 80%">
     <tr>
-     <td>Course Name</td>
+     <td><b>Course Name</b></td>
      <td><input type="text" name="c_name" /></td>
     </tr>
     <tr>
-     <td>Course Description</td>
+     <td><b>Course Description</b></td>
      <td><input type="text" name="c_desp" /></td>
     </tr>
     <tr>
-     <td>Course fees</td>
+     <td><b>Course fees</b></td>
      <td><input type="text" name="c_fees" /></td>
     </tr>
    </table>
+   <br>
    <input type="submit" value="Submit" />
   </form>
  </div>

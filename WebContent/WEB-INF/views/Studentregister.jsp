@@ -2,40 +2,51 @@
  pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
+<style type="text/css">
+body{
+background-image:url("image/background.jpg");
+background-size: 1300px 520px;
+  background-repeat: no-repeat;
+background-attachment: fixed;
+}h1 { color: #FFFFFF; }
+tr{color:#FFFFFF;}
+td{color:#FFFFFF;}
+</style>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
  <div align="center">
-  <h1>Employee Register Form</h1>
+  <h1>Student Register Form</h1>
   <form action="<%= request.getContextPath() %>/register" method="post">
    <table style="with: 80%">
     <tr>
-     <td>First Name</td>
-     <td><input type="text" name="firstName" /></td>
+     <td><b>First Name</b></td>
+     <td><input type="text" name="firstName" required/></td>
     </tr>
     <tr>
-     <td>Last Name</td>
-     <td><input type="text" name="lastName" /></td>
+     <td><b>Last Name</b></td>
+     <td><input type="text" name="lastName" required/></td>
     </tr>
     <tr>
-     <td>UserName</td>
-     <td><input type="text" name="username" /></td>
+     <td><b>UserName</b></td>
+     <td><input type="text" name="username" minlength="6" minlength="20" required/></td>
     </tr>
     <tr>
-     <td>Password</td>
-     <td><input type="password" name="password" /></td>
+     <td><b>Password</b></td>
+     <td><input type="password" name="password" required/></td>
     </tr>
     <tr>
-     <td>Address</td>
-     <td><input type="text" name="address" /></td>
+     <td><b>Address</b></td>
+     <td><input type="text" name="address" required/></td>
     </tr>
     <tr>
-     <td>Contact No</td>
-     <td><input type="text" name="contact" /></td>
+     <td><b>Contact No</b></td>
+     <td><input type="text" name="contact" required/></td>
     </tr>
    </table>
+   <br>
    <input type="submit" value="Submit" />
   </form>
  </div>

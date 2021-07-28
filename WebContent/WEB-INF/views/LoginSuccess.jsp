@@ -16,12 +16,23 @@ ResultSet resultSet1=null;
 %>
 <!DOCTYPE html>
 <html>
+<style>
+body{
+background-image:url("image/background.jpg");
+background-size: 1300px 520px;
+  background-repeat: no-repeat;
+background-attachment: fixed;
+}
+h3 { color: #FFFFFF; }
+tr{color:#FFFFFF;}
+td{color:#FFFFFF;}
+</style>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
-<h4>Welcome  <%out.println(session.getAttribute("username")); %></h2>
+<h3>Welcome  <%out.println(session.getAttribute("username")); %></h3>
  <div align="center">
  <form action="courseDetails.jsp">
 <input type="submit" value="VIEW COURSE DETAILS">

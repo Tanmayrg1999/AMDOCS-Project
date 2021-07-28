@@ -3,6 +3,16 @@
 <%@page import="com.training.dao.*"%>
 <!DOCTYPE html>
 <html>
+<style>
+body{
+background-image:url("image/background.jpg");
+background-size: 1300px 520px;
+  background-repeat: no-repeat;
+background-attachment: fixed;
+}h1 { color: #FFFFFF; }
+tr{color:#FFFFFF;}
+td{color:#FFFFFF;}
+</style>
 <head>
 <meta charset="ISO-8859-1">
 <title>WELCOME ADMIN</title>
