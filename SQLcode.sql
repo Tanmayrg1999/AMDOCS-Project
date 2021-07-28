@@ -23,15 +23,15 @@ select * from StudentDetails;
 -- Function to get maximum Id
 
 CREATE OR REPLACE FUNCTION getId         
-            RETURN employee.id%TYPE IS    
-           emp_id employee.id%TYPE; 
+            RETURN StudentDetails.id%TYPE IS    
+           emp_id StudentDetails.id%TYPE; 
  BEGIN    
-    SELECT id INTO emp_id from employee    where id = (Select MAX(id) from employee);      
+    SELECT id INTO emp_id from StudentDetails    where id = (Select MAX(id) from StudentDetails);      
     RETURN emp_id; 
  END;
 
 -- Fetch maximum ID
-select getId from employee;
+select getId from StudentDetails;
 
 --Create Admin Table
 Create table admin(id int NOT NULL,
@@ -53,3 +53,13 @@ insert into course values (113,'C++ Programming','Programming language',199);
 
 -- Display Course table data
 Select * from course;
+
+-- Get Maximum Id From Course Table
+
+CREATE OR REPLACE FUNCTION getCid         
+            RETURN course.course_id%TYPE IS    
+           c_id course.course_id%TYPE; 
+ BEGIN    
+    SELECT course_id INTO c_id from course    where course_id = (Select MAX(course_id) from course);      
+        RETURN c_id; 
+ END;
