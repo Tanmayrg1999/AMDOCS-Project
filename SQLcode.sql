@@ -63,3 +63,7 @@ CREATE OR REPLACE FUNCTION getCid
     SELECT course_id INTO c_id from course    where course_id = (Select MAX(course_id) from course);      
         RETURN c_id; 
  END;
+ 
+ -- Create feedback table
+ 
+ create table feedback(name varchar2(20),exp varchar2(20),use varchar2(20),fea varchar(20),sugg(200));
