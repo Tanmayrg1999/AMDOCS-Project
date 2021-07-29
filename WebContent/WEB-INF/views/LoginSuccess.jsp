@@ -33,6 +33,7 @@ td{color:#FFFFFF;}
 </head>
 <body>
 <h3>Welcome  <%out.println(session.getAttribute("username")); %></h3>
+
  <div align="center">
  <form action="courseDetails.jsp">
 <input type="submit" value="VIEW COURSE DETAILS">
@@ -66,15 +67,20 @@ String c_name = rs.getString("c_name");
 </select>
    <input type="submit" value="ENROLL NOW" />
   </form>
+<br><br>
+<div align="center">
+<form action="feedback.jsp">
+<input type="submit" value="FEEDBACK">
+</form>
+</div>
 <%
+
 }
 catch(SQLException sqe)
 { 
 out.println(sqe);
 }
 %>
-
-
 </div>
 </body>
 </html>
