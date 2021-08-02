@@ -42,5 +42,6 @@ JSP is a technology which is used to create dynamic web applications. Also it al
 1. Open the **Eclipse IDE** and create a new **Web Dynamic project**.
 2. If the feature is not available in the drop down menu then, Go To **Help** -> **Install New Software** -> In the work with paste teh following link Oxygen - http://download.eclipse.org/releases/oxygen -> In The Type Filter text search for **WEB XML** -> **Finish**.
 3. Once the Web Dynamic Project feature is added Build a new project and create a new project with **pom.xml**.
-4. Also while creating new projectc add new Runtime and **Apache tomcat 9.0 or the available server** with you.
-5. 
+4. Also while creating new project add new Runtime and **Apache tomcat 9.0 or the available server** with you.
+5. Now create some packages ,in my case I have created 3 packages **com.training.controller , com.training.dao , com.training.model**.
+6. The Dao package is used for data accces object
