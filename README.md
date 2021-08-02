@@ -37,3 +37,10 @@
 
 JSP is a technology which is used to create dynamic web applications. Also it allows one to write Java code embedded within it. This flexibilty of JSP gives a bulk lot of advantage over other languages like html,javascript .
 
+## Steps To Configure/Setup project:
+
+1. Open the **Eclipse IDE** and create a new **Web Dynamic project**.
+2. If the feature is not available in the drop down menu then, Go To **Help** -> **Install New Software** -> In the work with paste teh following link Oxygen - http://download.eclipse.org/releases/oxygen -> In The Type Filter text search for **WEB XML** -> **Finish**.
+3. Once the Web Dynamic Project feature is added Build a new project and create a new project with **pom.xml**.
+4. Also while creating new projectc add new Runtime and **Apache tomcat 9.0 or the available server** with you.
+5. 
