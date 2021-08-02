@@ -51,6 +51,7 @@ JSP is a technology which is used to create dynamic web applications. Also it al
 10. Next we design our JSP Pages where we not only define the structure of our page but in some cases we can also embed the JDBC code inside it to establisg connection with database.
 11. Now we write the sql code in oracle developer so as to store the value or check the value as provided by the user.
 12. To establish a simple JDBC code we can write a very simple code as follows :
+
 ` Class.forName("oracle.jdbc.driver.OracleDriver");
   Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/orcl","sys as sysdba","system");`
 13. Design your database create table for storing Admin Login,Student Login,Course Details etc.
