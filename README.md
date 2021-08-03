@@ -54,6 +54,7 @@ JSP is a technology which is used to create dynamic web applications. Also it al
 
 ` Class.forName("oracle.jdbc.driver.OracleDriver");
   Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/orcl","sys as sysdba","system");`
+  
 13. Design your database create table for storing Admin Login,Student Login,Course Details etc.
 14. Also you can add some input validations to you registration forms so as to keep your system Robust and consistent.
 
